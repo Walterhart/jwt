@@ -8,6 +8,7 @@ const app = express()
 require('express-async-errors')
 require('dotenv').config()
 
+app.use(express.static('./public'))
 app.use(express.json())
 
 app.use(error404)
