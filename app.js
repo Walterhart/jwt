@@ -7,12 +7,12 @@ const errorHandlerMiddleware = require('./midddleware/errorHandlerMiddleware')
 const app = express()
 
 require('express-async-errors')
+require('dotenv').config()
 
 app.use(express.static('./public'))
 app.use(express.json())
 
 app.use('/api/v1',mainRouter)
-
 app.use(error404)
 app.use(errorHandlerMiddleware)
 const port = process.env.PORT || 3000
